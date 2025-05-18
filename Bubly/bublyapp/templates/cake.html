@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cake Celebration</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'cssfiles/cake.css' %}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+            background-image: url("{% static 'images/asifa.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        } */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+
+        }
+
+        /* Background Image with dark overlay */
+        /* body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("{% static 'images/asifa.jpg' %}") no-repeat center center/cover; 
+            z-index: -2;
+            filter: brightness(0.3) blur(1px);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        } */
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cake-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+
+        .cake {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            top: 50px;
+            left: 25px;
+            transition: transform 0.5s ease;
+        }
+
+        .plate {
+            position: absolute;
+            width: 270px;
+            height: 110px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            box-shadow: 0 2px 0 #cacaca;
+            top: 190px;
+            left: -10px;
+        }
+
+        .layer {
+            position: absolute;
+            width: 250px;
+            height: 60px;
+            border-radius: 15px;
+        }
+
+        .layer-bottom {
+            bottom: 0;
+            background-color: #f44336;
+        }
+
+        .layer-middle {
+            bottom: 60px;
+            background-color: #e91e63;
+        }
+
+        .layer-top {
+            bottom: 120px;
+            background-color: #9c27b0;
+        }
+
+        .icing {
+            position: absolute;
+            top: 0;
+            width: 250px;
+            height: 40px;
+            background-color: #f8bbd0;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .candle {
+            position: absolute;
+            width: 20px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            top: -40px;
+            left: 115px;
+        }
+
+        .flame {
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            background-color: #ffeb3b;
+            border-radius: 10px 10px 0 10px;
+            top: -30px;
+            left: 2.5px;
+            animation: flicker 1s infinite;
+        }
+
+        .knife {
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            top: 100px;
+            right: -150px;
+            transform: rotate(45deg);
+            transition: transform 1s ease;
+            pointer-events: none;
+        }
+
+        .knife-handle {
+            position: absolute;
+            width: 60px;
+            height: 20px;
+            background-color: #795548;
+            border-radius: 10px;
+            right: 0;
+            top: 10px;
+        }
+
+        .knife-blade {
+            position: absolute;
+            width: 140px;
+            height: 10px;
+            background-color: #bdbdbd;
+            border-radius: 5px;
+            right: 60px;
+            top: 15px;
+        }
+
+        .quote-container {
+            text-align: center;
+            margin-top: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+        }
+
+        .title {
+            color: #ff6ec4;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            min-height: 100px;
+        }
+
+        .cake-cut-message {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .next-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards 3s;
+        }
+
+        .next-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes flicker {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cake-cut {
+            animation: cutCake 1s forwards;
+        }
+
+        @keyframes cutCake {
+            0% {
+                transform: translateX(0) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(-200px) rotate(45deg);
+            }
+        }
+
+        .cake-slice {
+            animation: sliceCake 1s forwards 1s;
+        }
+
+        @keyframes sliceCake {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .cake-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .cake {
+                width: 200px;
+                height: 160px;
+                left: 25px;
+            }
+
+            .knife {
+                width: 150px;
+                right: -100px;
+            }
+
+            .quote {
+                font-size: 1.2rem;
+            }
+        }
+
+        #fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .next-button {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="fireworks"></canvas>
+    <div class="container">
+        <div class="cake-container">
+            <div class="cake">
+                <div class="plate"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top"></div>
+                <div class="icing"></div>
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <div class="knife">
+                <div class="knife-handle"></div>
+                <div class="knife-blade"></div>
+            </div>
+        </div>
+
+        <div class="quote-container">
+            <h1 class="title">Happy Birthday Bubbly!</h1>
+            <div class="quote" id="quote">“Wishing you a day filled with love, laughter, and cake!”</div>
+            <div class="cake-cut-message">Celebration begins!</div>
+        </div>
+
+        <!-- Bottom Login Button -->
+        <div style="position: fixed; bottom: 30px; width: 100%; text-align: center; z-index: 2;">
+            <a href="{% url 'login' %}" class="next-button" id="login-button">Continue to Login</a>
+        </div>
+
+
+    </div>
+
+    <script src="{% static 'jsfiles/cake.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    background-image:url("https://img.freepik.com/free-photo/colorful-background-with-blurred-style_23-2147997666.jpg?t=st=1745646676~exp=1745650276~hmac=0430ded053ec8f0e02f4e367faa627523ae1d5009b29d77fa1c3c28e026f51c1&w=1380");
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.page-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.page {
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.diary-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeIn 1.5s ease;
+}
+
+.title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.date {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.diary-content {
+    /* background: white; */
+    background-image: url("https://img.freepik.com/free-vector/background-abstract-line-digital-gradient-luxury_483537-2367.jpg?t=st=1745646832~exp=1745650432~hmac=8307971cac68726d51e931cc55956f6f5e33bbebb2107cfe8054582ceb84986f&w=1800");
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    animation: slideUp 1s ease;
+}
+
+.diary-entry {
+    margin-bottom: 3rem;
+}
+.diary-entry h2 {
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.diary-entry p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #444;
+}
+.p{
+    background: white;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 2rem;
+}
+
+.photo-gallery {
+    margin-bottom: 3rem;
+}
+
+.photo-gallery h2 {
+    color: #3498db;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+    transform: translateY(0);
+}
+
+.wishes-section {
+    margin-bottom: 2rem;
+}
+
+.wishes-section h2 {
+    color: #9b59b6;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.wish-card {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-20px);
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.wish-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.wish-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.wish-card p {
+    color: white;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.diary-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .diary-content {
+        padding: 1.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .page {
+        padding: 1rem 0;
+    }
+} 

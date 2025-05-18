@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Emotional Diary</title>
+    <link rel="stylesheet" href="{% static 'cssfiles/diary.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="diary-header">
+            <h1 class="title">My Emotional Diary</h1>
+            <div class="date">May 19, 2005</div>
+        </div>
+        
+        <div class="diary-content">
+            <div class="diary-entry">
+                <h2>Dear Bubbly,</h2>
+                <p>As I write this on your special day, my heart is filled with gratitude for having you in my life. Our friendship has been a beautiful journey of shared laughter, tears, and countless memories that I will cherish forever.</p>
+                <p>You have this incredible ability to light up any room you enter with your infectious smile and positive energy. Your kindness, compassion, and strength inspire me to be a better person every day.</p>
+                <p>Through all the ups and downs, you've been my rock, my confidant, and my partner in crime. We've celebrated each other's successes, supported each other through challenges, and created memories that will last a lifetime.</p>
+                <p>I remember the day we first met like it was yesterday. Little did I know that you would become one of the most important people in my life. Our friendship has grown stronger with each passing year, and I'm so grateful for every moment we've shared.</p>
+                <p>On your birthday, I want to celebrate not just the day you were born, but the amazing person you are and the beautiful friendship we share. You deserve all the happiness, love, and success in the world.</p>
+                <p>Thank you for being you, for your friendship, and for all the joy you bring to my life. Here's to many more years of friendship, adventures, and beautiful memories together.</p>
+                <p>Happy Birthday, my dear friend!</p>
+                <div class="signature">With love,<br>Jagadeesh Chowdary</div>
+            </div>
+            
+            <div class="photo-gallery">
+                <h2>Your Special Photos</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300?friendship" alt="Friendship Moment 1">
+                        <div class="caption">Our first adventure together</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300?celebration" alt="Friendship Moment 2">
+                        <div class="caption">Celebrating special occasions</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300?travel" alt="Friendship Moment 3">
+                        <div class="caption">Exploring new places</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/300x300?laughter" alt="Friendship Moment 4">
+                        <div class="caption">Laughter is the best medicine</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="wishes-section">
+                <h2>Birthday Wishes</h2>
+                <div class="wish-card">
+                    <p>May your day be filled with joy, laughter, and all the things that make you happy.</p>
+                </div>
+                <div class="wish-card">
+                    <p>May this year bring you new adventures, beautiful memories, and all your heart desires.</p>
+                </div>
+                <div class="wish-card">
+                    <p>May you always be surrounded by love, positivity, and people who appreciate you for who you are.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="diary-footer">
+            <a href="{% url 'landing' %}" class="home-button">Back to Home</a>
+        </div>
+    </div>
+    
+    <script src="{% static 'jsfiles/diary.js' %}"></script>
+</body>
+</html> 

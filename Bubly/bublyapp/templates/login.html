@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Personal Diary</title>
+    <link rel="stylesheet" href="{% static 'cssfiles/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <h1 class="title">Personal Diary</h1>
+            <div class="lock-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+        
+            <form method="post" action="{% url 'login' %}" id="login-form">
+
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text"  name="unm" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="pwd" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <div class="hint">Hint: Your favorite color and your birth month</div>
+        </div>
+    </div>
+</body>
+</html> 

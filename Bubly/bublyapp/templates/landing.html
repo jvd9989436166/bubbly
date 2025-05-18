@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bubbly!</title>
+    <link rel="stylesheet" href="{% static 'cssfiles/landing.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="fireblaster left"></div>
+<div class="fireblaster right"></div>
+
+        <div class="birthday-card">
+            <div class="balloons">
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+            <h1 class="title">Happy Birthday</h1>
+            <div class="name">Bubbly</div>
+            <div class="date">May 19</div>
+            <div class="sparkles"></div>
+            <a href="{% url 'index' %}" class="enter-button">Enter Our Journey</a>
+        </div>
+    </div>
+    <script src="{% static 'jsfiles/landing.js' %}"></script>
+</body>
+</html> 

@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Friendship Diary</title>
+    <link rel="stylesheet" href="{% static 'cssfiles/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .timeline-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 60px; /* spacing for the button */
+}
+
+.next-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: darkorange;
+    color: white;
+}
+
+        .timeline-container img{
+           height: 200px;
+           width: 200px; 
+           object-fit: cover;
+           border: 2px solid gold;
+        }
+        .timeline-content{
+            background-color: white;
+        }
+        body{
+            background-image: url("{% static 'images/AsBG.jpg' %}");
+            object-fit: cover;
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline-container">
+        <h1 class="title">To You,On Your Day </h1>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <div class="date">May 16 2024</div>
+                    <h2>Tucked the very First Snap Into My Mobile</h2>
+                    <img src="{% static 'images/b1.jpg' %}" alt="First Meeting">
+                    <p>"I’m convinced your camera lens is in love with you—it captures your beauty too perfectly."</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                  <h2>Andhra Ooty = Asifa beauty</h2>
+                    <img src="{% static 'images/b14.jpg' %}"alt="First Adventure">
+                    <p>A path of leaves ,a girl of light ,and a moment that smiled</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>MITS</h2>
+                    <img src="{% static 'images/b33.jpg' %}" alt="Summer Memories">
+                    <p>Vayyari Pavurai Pittaaa </p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h2>Sai Baba Temple <h2>
+                    <img src="{% static 'images/b24.jpg' %}" alt="Festival Celebrations">
+                    <p>Nandhalala yendhuku ivala intha kala</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>Boyakonda!</h2>
+                    <img src="{% static 'images/b32.jpg' %}"alt="Holiday Celebrations">
+                    <p> Enjoying trip together with joy and laughter. </p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h2>Home Made Pictures</h2>
+                    <img src="{% static 'images/b30.jpg' %}" alt="Milestone Achievement">
+                    <p>🧵"Captured in corners, framed in memories… home made pictures carry heartbeats."</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>Madanapalli</h2>
+                    <img src="{% static 'images/b35.jpg' %}" alt="Beach Day">
+                    <p>కెమెరా కి ముందు నువ్వు కాదు… కెమెరానే tension లో పడింది!.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h2>7th Heaven With Great Man[Hikkkk]</h2>
+                    <img src="{% static 'images/b16.jpg' %}"alt="Diwali Celebrations">
+                    <p>కళ్లకి eyeliner లేదేమో కానీ expressions మాత్రం deadly!</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>Banglore Mall</h2>
+                    <img src="{% static 'images/b18.jpg' %}" alt="New Year Together">
+                    <p>Even with the golden swan glowing, the entire mall lit up with your beauty.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h2>Dandiya</h2>
+                    <img src="{% static 'images/b22.jpg' %}" alt="Spring Picnic">
+                    <p>Konte chupulatho kalale rayinchave</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>Horsely Hills</h2>
+                    <img src="{% static 'images/b26.jpg' %}" alt="Mountain Adventure">
+                    <p>A frame where silence smiles and wings feel safe</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h2>Pondyy</h2>
+                    <img src="{% static 'images/b2.jpg' %}" alt="Christmas Magic">
+                    <p>A breeze in her smile, sunlight in her soul—she was nature's quiet masterpiece..</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>Traditional Day</h2>
+                    <img src="{% static 'images/b3.jpg' %}" alt="Traditional Day">
+                    <p>The day you looked stunning in your beautiful saree!</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h2>PuduCherryyy</h2>
+                    <img src="{% static 'images/b10.jpg' %}" alt="Summer Vacation">
+                    <p>The sea danced but not like you did that day.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h2>Freshers</h2>
+                    <img src="{% static 'images/b37.jpg' %}" alt="Friendship Day">
+                    <p>Elegance stood still,and the world watched in awe.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <div class="date">May 19 2024</div>
+                    <h2>Celebration</h2>
+                    <img src="{% static 'images/b20.jpg' %}"alt="Year End Celebration">
+                    <p>Mehndi faded,but the memories… it held never did.</p>
+                </div>
+            </div>
+                    
+        
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'cake' %}" class="next-button">Continue to Birthday Cake</a>
+    </div>
+    <script src="{% static 'jsfiles/script.js' %}"></script>
+</body>
+</html> 
